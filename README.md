@@ -42,6 +42,8 @@ autoredshift --config
 - **Drag** points to adjust the curve.
 - **Scroll** to zoom.
 
+<img width="956" height="1086" alt="autoredshift_graph" src="https://github.com/user-attachments/assets/9e76c571-dc59-4f2d-918a-f6f5cab19872" />
+
 ## Automation
 
 To have Autoredshift run automatically every minute, you can add a cron job.
