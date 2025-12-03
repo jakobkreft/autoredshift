@@ -1,3 +1,6 @@
+
+![banner](https://github.com/user-attachments/assets/e97de8b3-4c89-4174-a80d-293d197294e7)
+
 # Autoredshift
 
 A tool to automatically adjust screen temperature based on a custom curve.
