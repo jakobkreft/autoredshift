@@ -19,13 +19,12 @@ impl Default for Config {
     fn default() -> Self {
         Self {
             points: vec![
-                ConfigPoint { hour: 4.1, temp: 3556 },
-                ConfigPoint { hour: 5.8, temp: 5710 },
-                ConfigPoint { hour: 7.4, temp: 6323 },
-                ConfigPoint { hour: 12.8, temp: 6496 },
-                ConfigPoint { hour: 17.6, temp: 6353 },
-                ConfigPoint { hour: 19.3, temp: 5595 },
-                ConfigPoint { hour: 21.5, temp: 3742 },
+                ConfigPoint { hour: 3.0, temp: 3455 },
+                ConfigPoint { hour: 5.0, temp: 4601 },
+                ConfigPoint { hour: 6.0, temp: 6137 },
+                ConfigPoint { hour: 7.0, temp: 6468 },
+                ConfigPoint { hour: 15.0, temp: 6082 },
+                ConfigPoint { hour: 22.0, temp: 3102 },
             ],
         }
     }
@@ -33,17 +32,45 @@ impl Default for Config {
 
 impl Config {
     pub fn load() -> Self {
-        let path = Self::get_config_path();
-        if let Some(path) = path {
-            if path.exists() {
-                if let Ok(content) = fs::read_to_string(path) {
-                    if let Ok(config) = serde_json::from_str(&content) {
-                        return config;
-                    }
+        let path = match Self::get_config_path() {
+            Some(path) => path,
+            None => {
+                eprintln!(
+                    "Could not determine config directory. Using defaults. Run `autoredshift --config` to create one."
+                );
+                return Self::default();
+            }
+        };
+
+        if !path.exists() {
+            eprintln!(
+                "No config found at {}. Using defaults. Run `autoredshift --config` to create it.",
+                path.display()
+            );
+            return Self::default();
+        }
+
+        match fs::read_to_string(&path) {
+            Ok(content) => match serde_json::from_str(&content) {
+                Ok(config) => config,
+                Err(e) => {
+                    eprintln!(
+                        "Failed to parse config at {}: {}. Using defaults. Run `autoredshift --config` to recreate it.",
+                        path.display(),
+                        e
+                    );
+                    Self::default()
                 }
+            },
+            Err(e) => {
+                eprintln!(
+                    "Failed to read config at {}: {}. Using defaults. Run `autoredshift --config` to recreate it.",
+                    path.display(),
+                    e
+                );
+                Self::default()
             }
         }
-        Self::default()
     }
 
     pub fn save(&self) -> anyhow::Result<()> {
