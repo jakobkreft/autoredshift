@@ -19,10 +19,13 @@ impl Default for Config {
     fn default() -> Self {
         Self {
             points: vec![
-                ConfigPoint { hour: 5.0, temp: 4000 },
-                ConfigPoint { hour: 6.0, temp: 6400 },
-                ConfigPoint { hour: 20.0, temp: 6400 },
-                ConfigPoint { hour: 21.0, temp: 4000 },
+                ConfigPoint { hour: 4.1, temp: 3556 },
+                ConfigPoint { hour: 5.8, temp: 5710 },
+                ConfigPoint { hour: 7.4, temp: 6323 },
+                ConfigPoint { hour: 12.8, temp: 6496 },
+                ConfigPoint { hour: 17.6, temp: 6353 },
+                ConfigPoint { hour: 19.3, temp: 5595 },
+                ConfigPoint { hour: 21.5, temp: 3742 },
             ],
         }
     }
