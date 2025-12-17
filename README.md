@@ -1,3 +1,6 @@
+
+![banner](https://github.com/user-attachments/assets/e97de8b3-4c89-4174-a80d-293d197294e7)
+
 # Autoredshift
 
 A tool to automatically adjust screen temperature based on a custom curve.
@@ -41,6 +44,8 @@ autoredshift --config
 - **Right-click** to remove a point.
 - **Drag** points to adjust the curve.
 - **Scroll** to zoom.
+
+<img width="956" height="1086" alt="autoredshift_graph" src="https://github.com/user-attachments/assets/9e76c571-dc59-4f2d-918a-f6f5cab19872" />
 
 ## Automation
 
