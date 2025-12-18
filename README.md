@@ -27,6 +27,26 @@ Autoredshift allows you to define a custom temperature curve throughout the day 
    ```
    This will install the `autoredshift` binary to your Cargo bin directory (usually `~/.cargo/bin`).
 
+### Install from GitHub Releases
+
+> **Note:** The automated release workflow currently produces a single `x86_64` binary.
+
+1. Download the latest `autoredshift` asset from the [Releases](https://github.com/jakob/autoredshift/releases) page.
+2. Make it executable (and optionally run it in-place):
+   ```bash
+   chmod +x autoredshift
+   ./autoredshift --version
+   ```
+3. Move it somewhere on your `PATH`:
+   ```bash
+   mkdir -p ~/.local/bin
+   mv autoredshift ~/.local/bin/
+   ```
+4. Ensure `~/.local/bin` (or wherever you placed it) is on your `PATH`, reload your shell, and invoke the tool:
+   ```bash
+   autoredshift --version
+   ```
+
 ## Usage
 
 ### Run Manually
