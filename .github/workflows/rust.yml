@@ -21,13 +21,8 @@ jobs:
       - name: Build release binary
         run: cargo build --release
 
-      - name: Create GitHub Release
-        id: create_release
+      - name: Create release and upload binary
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
-
-      - name: Upload autoredshift binary
-        uses: softprops/action-gh-release@v2
-        with:
           files: target/release/autoredshift
