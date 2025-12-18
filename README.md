@@ -31,7 +31,7 @@ Autoredshift allows you to define a custom temperature curve throughout the day 
 
 > **Note:** The automated release workflow currently produces a single `x86_64` binary.
 
-1. Download the latest `autoredshift` asset from the [Releases](https://github.com/jakob/autoredshift/releases) page.
+1. Download the latest `autoredshift` asset from the [Releases](https://github.com/jakobkreft/autoredshift/releases) page.
 2. Make it executable (and optionally run it in-place):
    ```bash
    chmod +x autoredshift
