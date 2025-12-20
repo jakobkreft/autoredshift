@@ -16,7 +16,7 @@ Autoredshift allows you to define a custom temperature curve throughout the day 
   sudo pacman -S redshift    # Arch Linux
   sudo dnf install redshift  # Fedora
   ```
-- **Rust/Cargo**: Required to build the project.
+- **Rust/Cargo**: Only if you build the project yourself.
 
 ## Installation
 
